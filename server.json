@@ -1,0 +1,47 @@
+{
+  "todos": [
+    {
+      "title": "Do the laundry",
+      "flag": "HARD",
+      "id": "de2d"
+    },
+    {
+      "title": "Walk the dog",
+      "flag": "SMOOTH",
+      "id": "eb10"
+    },
+    {
+      "id": "d461",
+      "title": "fgdfgd"
+    },
+    {
+      "id": "2b27",
+      "title": "teste"
+    },
+    {
+      "id": "c247",
+      "newTodo": {
+        "title": "teste",
+        "color": "#a04646",
+        "difficulty": null,
+        "priority": "1"
+      }
+    },
+    {
+      "id": "92ba",
+      "title": "teste2",
+      "color": "#a72a2a",
+      "difficulty": null,
+      "priority": "1"
+    }
+  ],
+  "todos/removed": [
+    {
+      "id": "92ca",
+      "title": "teste2",
+      "color": "#a72a2a",
+      "difficulty": null,
+      "priority": "1"
+    }
+  ]
+}
