@@ -31,7 +31,6 @@ export const AddTodo = () => {
   return (
     <form action={handleAddNewTodo}>
       <FormInputs />
-      <button type="submit">Add todo</button>
     </form>
   );
 };

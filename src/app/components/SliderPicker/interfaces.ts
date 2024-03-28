@@ -3,7 +3,6 @@ export interface ISliderPicker {
   type: string;
   units: string[];
   maxStep: number;
-  subtitles?: string[];
   setValue: Function;
   value: number;
 }

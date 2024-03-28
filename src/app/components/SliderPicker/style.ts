@@ -20,7 +20,7 @@ export const SliderStyled = styled(Slider)({
   },
   "& .MuiSlider-valueLabel": {
     lineHeight: 1.2,
-    fontSize: 12,
+    fontSize: 18,
     background: "unset",
     padding: 0,
     width: 32,

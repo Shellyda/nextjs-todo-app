@@ -7,5 +7,11 @@ const DifficultySubtitles = [
   "Super hard",
 ];
 const PriorityUnits = ["4", "3", "2", "1"];
+const PrioritySubtitles = ["Backlog", "Do later", "Need do", "DO NOW"];
 
-export { DifficultySubtitles, DifficultyUnits, PriorityUnits };
+export {
+  DifficultySubtitles,
+  DifficultyUnits,
+  PrioritySubtitles,
+  PriorityUnits,
+};
