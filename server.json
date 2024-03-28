@@ -33,6 +33,20 @@
       "color": "#a72a2a",
       "difficulty": null,
       "priority": "1"
+    },
+    {
+      "id": "5e99",
+      "title": "teste",
+      "color": "#000000",
+      "difficulty": "HARD",
+      "priority": "1"
+    },
+    {
+      "id": "cc4f",
+      "title": "testet",
+      "color": "#000000",
+      "difficulty": "1",
+      "priority": "3"
     }
   ],
   "todos/removed": [

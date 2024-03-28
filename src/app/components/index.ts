@@ -1,5 +1,5 @@
 import { AddTodo } from "./AddTodo";
-import { DifficultySlider } from "./DifficultySlider";
+import { SliderPicker } from "./SliderPicker";
 import { TodoList } from "./TodoList";
 
-export { AddTodo, DifficultySlider, TodoList };
+export { AddTodo, SliderPicker, TodoList };

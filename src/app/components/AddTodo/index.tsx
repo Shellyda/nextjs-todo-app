@@ -1,6 +1,6 @@
-// 'use client' // Allows hydration by client side
 import { createTodo } from "@/app/services";
 import { revalidateTag } from "next/cache";
+import { FormInputs } from "../FormInputs";
 
 export const AddTodo = () => {
   const handleAddNewTodo = async (form: FormData) => {
@@ -8,12 +8,13 @@ export const AddTodo = () => {
 
     const title = form.get("title");
     const color = form.get("color");
-    const difficulty = form.get("difficulty");
-    const priority = form.get("priority");
+    const difficulty = Number(form.get("difficulty"));
+    const priority = Number(form.get("priority"));
 
     if (!title) {
       return;
     }
+
     const todo = {
       title,
       color,
@@ -29,15 +30,8 @@ export const AddTodo = () => {
 
   return (
     <form action={handleAddNewTodo}>
-      <input
-        type="text"
-        name="title"
-        placeholder="Add new todo"
-        alt="Text input"
-      />
-      <input type="color" name="color" alt="Color picker" />
-      <input type="number" name="priority" alt="Number input" />
-      <button type="submit">New todo</button>
+      <FormInputs />
+      <button type="submit">Add todo</button>
     </form>
   );
 };
