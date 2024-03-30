@@ -3,7 +3,7 @@
 import {
   DifficultySubtitles,
   PrioritySubtitles,
-} from "@/app/constants/dev.constants";
+} from "@/app/utils/constants/dev.constants";
 import {
   CheckCircleIcon,
   FaceSmileIcon,

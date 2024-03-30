@@ -1,4 +1,4 @@
-import { API_URL } from "@/app/constants/env.constants";
+import { API_URL } from "@/app/utils/constants/env.constants";
 import { ITodoData } from "./interfaces";
 
 export const createTodo = async (newTodo: ITodoData) => {
@@ -8,6 +8,6 @@ export const createTodo = async (newTodo: ITodoData) => {
       body: JSON.stringify({ ...newTodo }),
     });
   } catch (error) {
-    console.error(error);
+    throw error;
   }
 };

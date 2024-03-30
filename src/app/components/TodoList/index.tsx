@@ -1,6 +1,6 @@
-// "use client";
 "use server";
 import { getTodos, updateTodo } from "@/app/services";
+import { ITask } from "@/app/utils/interfaces";
 import { revalidateTag } from "next/cache";
 import { Card } from "../Card";
 import { Column } from "../Column";
@@ -21,16 +21,16 @@ export const TodoList = async () => {
     }
   );
 
-  const pendingTasks = data.filter((task: any) => task.status === "pending");
-  const canceledTasks = data.filter((task: any) => task.status === "canceled");
+  const pendingTasks = data.filter((task: ITask) => task.status === "pending");
+  const canceledTasks = data.filter(
+    (task: ITask) => task.status === "canceled"
+  );
   const completedTasks = data.filter(
-    (task: any) => task.status === "completed"
+    (task: ITask) => task.status === "completed"
   );
 
-  const handleOnClickIcon = async (task: any, newStatus: string) => {
+  const handleOnClickIcon = async (task: ITask, newStatus: string) => {
     "use server";
-    console.log(task);
-    console.log(newStatus);
 
     await updateTodo(newStatus, task);
 
@@ -42,8 +42,8 @@ export const TodoList = async () => {
       <main className="mt-10">
         <h1 className="text-2xl font-bold mb-5">Todo List</h1>
         <div className="grid grid-cols-3 gap-4">
-          <Column title="Pending">
-            {pendingTasks.map((task: any) => (
+          <Column title="Pending" tasksNumber={pendingTasks.length}>
+            {pendingTasks.map((task: ITask) => (
               <Card
                 task={task}
                 key={task.id}
@@ -53,14 +53,14 @@ export const TodoList = async () => {
             ))}
           </Column>
 
-          <Column title="Completed">
-            {completedTasks.map((task: any) => (
+          <Column title="Completed" tasksNumber={completedTasks.length}>
+            {completedTasks.map((task: ITask) => (
               <Card task={task} key={task.id} />
             ))}
           </Column>
 
-          <Column title="Canceled">
-            {canceledTasks.map((task: any) => (
+          <Column title="Canceled" tasksNumber={canceledTasks.length}>
+            {canceledTasks.map((task: ITask) => (
               <Card task={task} key={task.id} />
             ))}
           </Column>

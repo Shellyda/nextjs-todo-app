@@ -1,6 +1,7 @@
-import { API_URL } from "@/app/constants/env.constants";
+import { API_URL } from "@/app/utils/constants/env.constants";
+import { ITask } from "@/app/utils/interfaces";
 
-export const getTodos = async () => {
+export const getTodos = async (): Promise<ITask[]> => {
   try {
     const response = await fetch(`${API_URL}/todos`, {
       next: {
@@ -12,6 +13,6 @@ export const getTodos = async () => {
 
     return data;
   } catch (error) {
-    console.error(error);
+    throw error;
   }
 };
