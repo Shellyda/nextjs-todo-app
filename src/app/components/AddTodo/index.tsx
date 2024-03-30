@@ -1,3 +1,5 @@
+"use server"; // Execute this function in Next backend server
+
 import { createTodo } from "@/app/services";
 import { revalidateTag } from "next/cache";
 import { FormInputs } from "../FormInputs";
@@ -20,6 +22,8 @@ export const AddTodo = () => {
       color,
       difficulty,
       priority,
+      date: new Date(),
+      status: "pending",
     };
 
     createTodo(todo);

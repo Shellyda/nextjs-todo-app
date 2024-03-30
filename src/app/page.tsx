@@ -3,10 +3,10 @@ import { TodoList } from "./components/TodoList";
 
 const Home = () => {
   return (
-    <main>
-      <TodoList />
-
+    <main className="flex items-center justify-around">
       <AddTodo />
+
+      <TodoList />
     </main>
   );
 };

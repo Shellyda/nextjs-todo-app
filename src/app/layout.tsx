@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Todo App",
-  description: "Management app",
+  description: "Tasks Management app",
 };
 
 export default function RootLayout({

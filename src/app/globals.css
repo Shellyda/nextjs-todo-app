@@ -16,7 +16,8 @@
   }
 }
 
-body {
+body,
+html {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -24,8 +25,8 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-  font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
+  height: 100%;
 }
 
 @layer utilities {
