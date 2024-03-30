@@ -33,7 +33,10 @@ export const AddTodo = () => {
   };
 
   return (
-    <form action={handleAddNewTodo}>
+    <form
+      action={handleAddNewTodo}
+      className="fixed z-10 left-24 bottom-0  w-full"
+    >
       <FormInputs />
     </form>
   );

@@ -7,10 +7,12 @@ import {
 import {
   ArrowLeftCircleIcon,
   CheckCircleIcon,
-  FaceSmileIcon,
-  XCircleIcon,
+  PauseCircleIcon,
 } from "@heroicons/react/24/outline";
-import { XCircleIcon as XCircleIconSolid } from "@heroicons/react/24/solid";
+import {
+  TagIcon,
+  XCircleIcon as XCircleIconSolid,
+} from "@heroicons/react/24/solid";
 
 import { Tag } from "../Tag";
 import { ICard } from "./interfaces";
@@ -40,9 +42,9 @@ export const Card = ({ task, key, onClickIcon }: ICard) => {
                 className="h-6 w-6 cursor-pointer text-green-500 hover:bg-green-500 hover:text-white hover:rounded-full"
               />
 
-              <XCircleIcon
+              <PauseCircleIcon
                 onClick={() => onClickIcon?.(task, "archived")}
-                className="h-6 w-6 cursor-pointer text-red-500 hover:bg-red-500 hover:text-white hover:rounded-full"
+                className="h-6 w-6 cursor-pointer text-gray-700 hover:bg-gray-500 hover:text-white hover:rounded-full"
               />
             </div>
           ) : (
@@ -79,7 +81,7 @@ export const Card = ({ task, key, onClickIcon }: ICard) => {
           <Tag text={PrioritySubtitles[task.priority]} />
         </span>
         <span className="text-sm">
-          <FaceSmileIcon className="h-6 w-6" color={task.color} />
+          <TagIcon className="h-6 w-6" color={task.color} />
         </span>
       </div>
 
