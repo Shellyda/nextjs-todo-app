@@ -1,9 +1,9 @@
 "use server";
-import { getTodos, updateTodo } from "@/app/services";
+import { deleteTodo, getTodos, updateTodo } from "@/app/services";
 import { ITask } from "@/app/utils/interfaces";
 import { revalidateTag } from "next/cache";
-import { Card } from "../Card";
-import { Column } from "../Column";
+import { Card } from "../../components/Card";
+import { Column } from "../../components/Column";
 
 export const TodoList = async () => {
   const data = await getTodos();
@@ -22,8 +22,8 @@ export const TodoList = async () => {
   );
 
   const pendingTasks = data.filter((task: ITask) => task.status === "pending");
-  const canceledTasks = data.filter(
-    (task: ITask) => task.status === "canceled"
+  const archivedTasks = data.filter(
+    (task: ITask) => task.status === "archived"
   );
   const completedTasks = data.filter(
     (task: ITask) => task.status === "completed"
@@ -32,7 +32,11 @@ export const TodoList = async () => {
   const handleOnClickIcon = async (task: ITask, newStatus: string) => {
     "use server";
 
-    await updateTodo(newStatus, task);
+    if (newStatus == "deleted") {
+      await deleteTodo(task);
+    } else {
+      await updateTodo(newStatus, task);
+    }
 
     revalidateTag("get-todos");
   };
@@ -40,28 +44,23 @@ export const TodoList = async () => {
   return (
     <div className="container mx-auto">
       <main className="mt-10">
-        <h1 className="text-2xl font-bold mb-5">Todo List</h1>
+        <h1 className="text-2xl font-bold mb-5">Todo list Board</h1>
         <div className="grid grid-cols-3 gap-4">
           <Column title="Pending" tasksNumber={pendingTasks.length}>
             {pendingTasks.map((task: ITask) => (
-              <Card
-                task={task}
-                key={task.id}
-                onClickCheck={handleOnClickIcon}
-                onClickCancel={handleOnClickIcon}
-              />
+              <Card task={task} key={task.id} onClickIcon={handleOnClickIcon} />
             ))}
           </Column>
 
           <Column title="Completed" tasksNumber={completedTasks.length}>
             {completedTasks.map((task: ITask) => (
-              <Card task={task} key={task.id} />
+              <Card task={task} key={task.id} onClickIcon={handleOnClickIcon} />
             ))}
           </Column>
 
-          <Column title="Canceled" tasksNumber={canceledTasks.length}>
-            {canceledTasks.map((task: ITask) => (
-              <Card task={task} key={task.id} />
+          <Column title="Archived" tasksNumber={archivedTasks.length}>
+            {archivedTasks.map((task: ITask) => (
+              <Card task={task} key={task.id} onClickIcon={handleOnClickIcon} />
             ))}
           </Column>
         </div>
