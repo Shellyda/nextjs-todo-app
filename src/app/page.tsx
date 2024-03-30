@@ -3,7 +3,7 @@ import { TodoList } from "./screens";
 
 const Home = () => {
   return (
-    <main className="flex items-center justify-around">
+    <main className="h-full w-full flex items-center justify-around bg-gradient-to-r from-emerald-400 to-cyan-400">
       <AddTodo />
 
       <TodoList />

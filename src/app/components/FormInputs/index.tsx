@@ -64,7 +64,7 @@ export const FormInputs = () => {
   return (
     <div
       ref={cardRef}
-      className="rounded-md overflow-hidden shadow-lg bg-white max-w-sm px-6 pt-9 border-purple-500 border-4 border-opacity-20 transition-opacity"
+      className="rounded-md overflow-hidden shadow-lg bg-white max-w-sm px-6 pt-9 border-gray-700 border-4 border-opacity-20 transition-opacity"
     >
       {!focused ? (
         <CursorArrowRaysIcon
@@ -91,6 +91,7 @@ export const FormInputs = () => {
           id="todo-title"
           type="text"
           name="title"
+          maxLength={36}
           placeholder="Do you have a task in mind?"
           alt="Text input"
           value={value.title}

@@ -42,9 +42,14 @@ export const TodoList = async () => {
   };
 
   return (
-    <div className="container mx-auto">
+    <div
+      className="container mx-auto absolute"
+      style={{
+        top: "0",
+      }}
+    >
       <main className="mt-10">
-        <h1 className="text-2xl font-bold mb-5">Todo list Board</h1>
+        <h1 className="text-2xl font-bold mb-5 text-white">Todo list Board</h1>
         <div className="grid grid-cols-3 gap-4">
           <Column title="Pending" tasksNumber={pendingTasks.length}>
             {pendingTasks.map((task: ITask) => (
