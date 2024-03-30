@@ -1,13 +1,17 @@
-import { API_URL } from "@/constants/env.constants";
+import { API_URL } from "@/app/constants/env.constants";
 
 export const getTodos = async () => {
-  const response = await fetch(`${API_URL}/todos`, {
-    next: {
-      tags: ["get-todos"],
-    },
-  });
+  try {
+    const response = await fetch(`${API_URL}/todos`, {
+      next: {
+        tags: ["get-todos"],
+      },
+    });
 
-  const data = await response.json();
+    const data = await response.json();
 
-  return data;
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
 };

@@ -3,4 +3,5 @@ export interface ITodoData {
   color: FormDataEntryValue | null;
   difficulty: Number;
   priority: Number;
+  status: string;
 }

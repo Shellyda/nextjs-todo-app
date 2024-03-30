@@ -1,9 +1,13 @@
-import { API_URL } from "@/constants/env.constants";
+import { API_URL } from "@/app/constants/env.constants";
 import { ITodoData } from "./interfaces";
 
 export const createTodo = async (newTodo: ITodoData) => {
-  await fetch(`${API_URL}/todos`, {
-    method: "POST",
-    body: JSON.stringify({ ...newTodo }),
-  });
+  try {
+    await fetch(`${API_URL}/todos`, {
+      method: "POST",
+      body: JSON.stringify({ ...newTodo }),
+    });
+  } catch (error) {
+    console.error(error);
+  }
 };
