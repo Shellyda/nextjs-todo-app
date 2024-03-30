@@ -56,7 +56,7 @@ export const TodoList = async () => {
     >
       <main className="mt-10">
         <div className="flex">
-          <ClipboardDocumentCheckIcon className="mr-2 h-6 w-6 opacity-50cursor-pointer text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]" />
+          <ClipboardDocumentCheckIcon className="mr-2 h-6 w-6 cursor-pointer text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]" />
 
           <h1
             className="text-2xl font-bold mb-5 text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]
@@ -70,7 +70,7 @@ export const TodoList = async () => {
             title="Pending"
             tasksNumber={pendingTasks.length}
             icon={
-              <ClockIcon className="mr-2 h-6 w-6 opacity-50cursor-pointer text-gray-700" />
+              <ClockIcon className="mr-2 h-6 w-6 opacity-50 cursor-pointer text-gray-700" />
             }
           >
             {pendingTasks.map((task: ITask) => (
