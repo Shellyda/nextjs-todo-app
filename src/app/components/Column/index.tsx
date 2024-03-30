@@ -1,6 +1,6 @@
 import { IColumn } from "./interfaces";
 
-export const Column = ({ title, children, tasksNumber }: IColumn) => {
+export const Column = ({ title, children, tasksNumber, icon }: IColumn) => {
   return (
     <div
       style={{
@@ -10,7 +10,10 @@ export const Column = ({ title, children, tasksNumber }: IColumn) => {
       className={`bg-gray-100 rounded p-4`}
     >
       <div className="flex items-center justify-between">
-        <h2 className="text-lg font-semibold mb-2">{title}</h2>
+        <div className="flex">
+          {icon}
+          <h2 className="text-lg font-semibold mb-2">{title}</h2>
+        </div>
         <div className="text-sm flex items-center justify-center w-6 h-6 rounded-md bg-black text-white">
           {tasksNumber}
         </div>

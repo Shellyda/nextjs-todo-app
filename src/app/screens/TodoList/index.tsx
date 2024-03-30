@@ -1,6 +1,12 @@
 "use server";
 import { deleteTodo, getTodos, updateTodo } from "@/app/services";
 import { ITask } from "@/app/utils/interfaces";
+import {
+  ArchiveBoxIcon,
+  ClipboardDocumentCheckIcon,
+  ClockIcon,
+  DocumentCheckIcon,
+} from "@heroicons/react/24/solid";
 import { revalidateTag } from "next/cache";
 import { Card } from "../../components/Card";
 import { Column } from "../../components/Column";
@@ -49,21 +55,48 @@ export const TodoList = async () => {
       }}
     >
       <main className="mt-10">
-        <h1 className="text-2xl font-bold mb-5 text-white">Todo list Board</h1>
+        <div className="flex">
+          <ClipboardDocumentCheckIcon className="mr-2 h-6 w-6 opacity-50cursor-pointer text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]" />
+
+          <h1
+            className="text-2xl font-bold mb-5 text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]
+"
+          >
+            Todo list Board
+          </h1>
+        </div>
         <div className="grid grid-cols-3 gap-4">
-          <Column title="Pending" tasksNumber={pendingTasks.length}>
+          <Column
+            title="Pending"
+            tasksNumber={pendingTasks.length}
+            icon={
+              <ClockIcon className="mr-2 h-6 w-6 opacity-50cursor-pointer text-gray-700" />
+            }
+          >
             {pendingTasks.map((task: ITask) => (
               <Card task={task} key={task.id} onClickIcon={handleOnClickIcon} />
             ))}
           </Column>
 
-          <Column title="Completed" tasksNumber={completedTasks.length}>
+          <Column
+            title="Completed"
+            tasksNumber={completedTasks.length}
+            icon={
+              <DocumentCheckIcon className="mr-2 h-6 w-6 opacity-50cursor-pointer text-gray-700" />
+            }
+          >
             {completedTasks.map((task: ITask) => (
               <Card task={task} key={task.id} onClickIcon={handleOnClickIcon} />
             ))}
           </Column>
 
-          <Column title="Archived" tasksNumber={archivedTasks.length}>
+          <Column
+            title="Archived"
+            tasksNumber={archivedTasks.length}
+            icon={
+              <ArchiveBoxIcon className="mr-2 h-6 w-6 opacity-50cursor-pointer text-gray-700" />
+            }
+          >
             {archivedTasks.map((task: ITask) => (
               <Card task={task} key={task.id} onClickIcon={handleOnClickIcon} />
             ))}
