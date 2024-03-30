@@ -82,7 +82,7 @@ export const TodoList = async () => {
             title="Completed"
             tasksNumber={completedTasks.length}
             icon={
-              <DocumentCheckIcon className="mr-2 h-6 w-6 opacity-50cursor-pointer text-gray-700" />
+              <DocumentCheckIcon className="mr-2 h-6 w-6 opacity-50 cursor-pointer text-gray-700" />
             }
           >
             {completedTasks.map((task: ITask) => (
@@ -94,7 +94,7 @@ export const TodoList = async () => {
             title="Archived"
             tasksNumber={archivedTasks.length}
             icon={
-              <ArchiveBoxIcon className="mr-2 h-6 w-6 opacity-50cursor-pointer text-gray-700" />
+              <ArchiveBoxIcon className="mr-2 h-6 w-6 opacity-50 cursor-pointer text-gray-700" />
             }
           >
             {archivedTasks.map((task: ITask) => (
