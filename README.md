@@ -1,4 +1,4 @@
-# NestJS Todo List Board
+# NextJS Todo List Board
 
 A Todo List Board Web App designed for managing tasks of varying difficulties, priority levels, and categories. This project serves as a practical exploration of Tailwind UI CSS and NextJS React Framework, with a specific focus on understanding server components and actions. Additionally, it utilizes Jest lib for testing and json-server to simulate an API, enabling seamless interaction between the front-end and back-end components.
 
