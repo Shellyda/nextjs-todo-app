@@ -25,7 +25,7 @@ https://github.com/Shellyda/nextjs-todo-app/assets/69990297/eaa6db61-5da6-4f95-9
 - Server components
 - Server Actions
 - Client components
-- Design UI
+- Design UI creation
 - Testing 
 
 ## Getting Started
