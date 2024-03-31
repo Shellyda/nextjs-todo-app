@@ -65,13 +65,13 @@ https://github.com/Shellyda/nextjs-todo-app/assets/69990297/eaa6db61-5da6-4f95-9
 ### Videos:
 
 #### 1. Add todo form animations: 
-https://github.com/Shellyda/nextjs-todo-app/assets/69990297/9dbfea8c-bde8-4ca8-b4c7-fbd3798c44fe
+https://github.com/Shellyda/nextjs-todo-app/assets/69990297/d0ef7d0e-8626-4cad-9578-eb8aa5568639
 
 #### 2. Cards hover effect:
-https://github.com/Shellyda/nextjs-todo-app/assets/69990297/6c1be6f5-2c3f-4f69-8624-aa23d24a8af0 
+https://github.com/Shellyda/nextjs-todo-app/assets/69990297/3fbf979e-e52d-41d6-85fc-0bcdd3537464
 
 #### 3. Alerts feedbacks:
-https://github.com/Shellyda/nextjs-todo-app/assets/69990297/d6fd53ac-6966-4d09-8d18-368f554f31b3
+https://github.com/Shellyda/nextjs-todo-app/assets/69990297/4ed285c6-f0b6-4f5e-858c-26bcfe7a7992
 
 ## Contributing
 Contributions are welcome! Feel free to submit bug reports, feature requests, or pull requests to help improve this project.
