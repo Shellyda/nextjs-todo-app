@@ -14,6 +14,7 @@ import {
   XCircleIcon as XCircleIconSolid,
 } from "@heroicons/react/24/solid";
 
+import Link from "next/link";
 import { Tag } from "../Tag";
 import { ICard } from "./interfaces";
 
@@ -37,10 +38,12 @@ export const Card = ({ task, key, onClickIcon }: ICard) => {
         <span className="text-sm  group/edit invisible group-hover/item:visible">
           {task.status == "pending" ? (
             <div className="flex">
-              <CheckCircleIcon
-                onClick={() => onClickIcon?.(task, "completed")}
-                className="h-6 w-6 cursor-pointer text-green-500 hover:bg-green-500 hover:text-white hover:rounded-full"
-              />
+              <Link href="?toast=true&type=completed">
+                <CheckCircleIcon
+                  onClick={() => onClickIcon?.(task, "completed")}
+                  className="h-6 w-6 cursor-pointer text-green-500 hover:bg-green-500 hover:text-white hover:rounded-full"
+                />
+              </Link>
 
               <PauseCircleIcon
                 onClick={() => onClickIcon?.(task, "archived")}
@@ -53,10 +56,12 @@ export const Card = ({ task, key, onClickIcon }: ICard) => {
                 onClick={() => onClickIcon?.(task, "pending")}
                 className="h-6 w-6 opacity-50cursor-pointer text-purple-500 hover:bg-purple-500 hover:text-white hover:rounded-full"
               />
-              <XCircleIconSolid
-                onClick={() => onClickIcon?.(task, "deleted")}
-                className="h-6 w-6 cursor-pointer text-red-500 hover:bg-red-500 hover:text-white hover:rounded-full"
-              />
+              <Link href="?toast=true&type=canceled">
+                <XCircleIconSolid
+                  onClick={() => onClickIcon?.(task, "deleted")}
+                  className="h-6 w-6 cursor-pointer text-red-500 hover:bg-red-500 hover:text-white hover:rounded-full"
+                />
+              </Link>
             </div>
           )}
         </span>

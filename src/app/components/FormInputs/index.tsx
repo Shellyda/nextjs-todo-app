@@ -32,7 +32,7 @@ export const FormInputs = () => {
   useEffect(() => {
     const handleClickOutside = (event: { target: any }) => {
       if (cardRef.current && !cardRef.current.contains(event.target)) {
-        ClearInput();
+        setFocused(false);
       }
     };
 

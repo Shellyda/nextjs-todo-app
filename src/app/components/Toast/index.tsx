@@ -1,114 +1,114 @@
 "use client";
-
-import { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname, useSearchParams } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import { IToast } from "./interfaces";
 
-export const Toast = ({ testID, text, type }: IToast) => {
-  const [show, setShow] = useState(true);
+export const Toast = ({ testID, text }: IToast) => {
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+
+  const toast = searchParams.get("toast");
+  const type = searchParams.get("type");
+
+  const closeButtonRef = useRef<HTMLButtonElement | null>(null);
+
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setShow(false);
-    }, 3000);
+    if (toast && type) {
+      const timeout = setTimeout(() => {
+        setShow(false);
+        if (closeButtonRef.current) {
+          closeButtonRef.current.click();
+        }
+      }, 5000);
 
-    return () => clearTimeout(timeout);
-  }, []);
+      return () => clearTimeout(timeout);
+    }
+  }, [toast, type]);
+
+  useEffect(() => {
+    if (!toast) {
+      setShow(false);
+    } else {
+      setShow(true);
+    }
+  }, [toast]);
+
+  if (!show) {
+    return null;
+  }
 
   return (
-    <>
-      {show && (
+    <div
+      id={testID}
+      className={`${
+        type === "completed" ? "bg-green-500" : "bg-red-500"
+      } fixed bottom-5 right-5 p-4 text-white rounded-lg shadow-lg z-50 transition-opacity duration-500 ease-in`}
+      role="alert"
+    >
+      <div className="flex items-center">
         <div
-          id={testID}
-          className="flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
-          role="alert"
+          className={`${
+            type === "completed"
+              ? "text-green-500 bg-green-100"
+              : "text-red-500 bg-red-100"
+          } flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full mr-3`}
         >
-          {type == "success" ? (
-            <div
-              id="icon-success"
-              className="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200"
-            >
-              <svg
-                className="w-5 h-5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-              </svg>
-              <span className="sr-only">Check icon</span>
-            </div>
+          {type === "completed" ? (
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M10 1C5.037 1 1 5.037 1 10s4.037 9 9 9 9-4.037 9-9-4.037-9-9-9zm4.707 7.707a1 1 0 0 0-1.414-1.414L9 11.586l-2.293-2.293a1 1 0 1 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l5-5z"
+              />
+            </svg>
           ) : (
-            <div
-              id="icon-danger"
-              className="flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
-              role="alert"
-            >
-              <div className="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-red-500 bg-red-100 rounded-lg dark:bg-red-800 dark:text-red-200">
-                <svg
-                  className="w-5 h-5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 11.793a1 1 0 1 1-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L8.586 10 6.293 7.707a1 1 0 0 1 1.414-1.414L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414L11.414 10l2.293 2.293Z" />
-                </svg>
-                <span className="sr-only">Error icon</span>
-              </div>
-              <div className="ms-3 text-sm font-normal">{text}</div>
-              <button
-                type="button"
-                className="ms-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
-                data-dismiss-target="#toast-danger"
-                aria-label="Close"
-              >
-                <span className="sr-only">Close</span>
-                <svg
-                  className="w-3 h-3"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 14 14"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-                  />
-                </svg>
-              </button>
-            </div>
-          )}
-
-          <div className="ms-3 text-sm font-normal">{text}</div>
-          <button
-            type="button"
-            className="ms-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
-            data-dismiss-target="#toast-success"
-            aria-label="Close"
-          >
-            <span className="sr-only">Close</span>
             <svg
-              className="w-3 h-3"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
+              className="w-5 h-5"
               fill="none"
-              viewBox="0 0 14 14"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
               <path
-                stroke="currentColor"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth="2"
-                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          )}
+        </div>
+        <div className="text-sm font-normal">{text}</div>
+        <Link id="close-toast" href={pathname}>
+          <button
+            ref={closeButtonRef}
+            type="button"
+            className=" text-white hover:text-gray-100 focus:outline-none"
+            style={{
+              marginTop: "8px",
+              marginLeft: "10px",
+            }}
+            data-dismiss-target={`#${testID}`}
+            aria-label="Close"
+          >
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
               />
             </svg>
           </button>
-        </div>
-      )}
-    </>
+        </Link>
+      </div>
+    </div>
   );
 };
