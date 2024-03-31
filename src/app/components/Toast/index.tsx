@@ -22,7 +22,7 @@ export const Toast = ({ testID, text }: IToast) => {
         if (closeButtonRef.current) {
           closeButtonRef.current.click();
         }
-      }, 5000);
+      }, 1000);
 
       return () => clearTimeout(timeout);
     }

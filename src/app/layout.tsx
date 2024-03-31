@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Todo App",
-  description: "Tasks Management app",
+  title: "Todo List Board",
+  description: "Todo Management Web App",
 };
 
 export default function RootLayout({
