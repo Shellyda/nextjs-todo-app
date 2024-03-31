@@ -33,12 +33,12 @@ This project is a Todo List Board Web App designed for managing tasks of varying
    yarn dev
    ```
 5. **Access the Application**: 
-   Open your web browser and navigate to `http://localhost:3000` to access the Todo board. Also, you can navigate to `http://localhost:3001/todos` to check todos's mocked REST API route response.
+   Open your web browser and navigate to `http://localhost:3000` to access the Todo board. Also, you can navigate to `http://localhost:3001/todos` to check todos' mocked REST API route response.
 
 ## Usage
-- **Add Task**: Click on the  button to add a new task. Fill in the necessary details such as title, difficulty, priority, and category.
-- **Change Status**: Use the provided options to change the status of a task (e.g., To Do, In Progress, Done).
-- **Delete Task**: Click on the delete icon next to a task to remove it from the list.
+- **Add Todo**: Click on the  button to add a new task. Fill in the necessary details such as title, difficulty, priority, and category.
+- **Change Status**: Use the provided options to change the status of a todo (e.g., Pending, Completed, Archived).
+- **Delete Todo**: Click on the delete icon next to a task to remove it from the list.
 
 ## Contributing
 Contributions are welcome! Feel free to submit bug reports, feature requests, or pull requests to help improve this project.
