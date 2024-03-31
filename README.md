@@ -20,7 +20,7 @@ https://github.com/Shellyda/nextjs-todo-app/assets/69990297/eaa6db61-5da6-4f95-9
   </ol>
 </details>
 
-# Features 
+## Features 
 - **Task Management**: Organize tasks based on different difficulties, priority levels, and categories.
 - **Clean Interface**: Tailwind UI CSS favored a customization full of style features such as alerts, animations, transitions, giving visual feedback to users.
 - **Status Tracking**: Keep track of changes in task status over time for improved productivity and workflow management.
