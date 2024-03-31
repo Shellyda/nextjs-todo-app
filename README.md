@@ -2,18 +2,18 @@
 
 A Todo List Board Web App designed for managing tasks of varying difficulties, priority levels, and categories. This project serves as a practical exploration of Tailwind UI CSS and NextJS React Framework, with a specific focus on understanding server components and actions. Additionally, it utilizes Jest lib for testing and json-server to simulate an API, enabling seamless interaction between the front-end and back-end components.
 
-
 https://github.com/Shellyda/nextjs-todo-app/assets/69990297/eaa6db61-5da6-4f95-99f8-e52e20c0a96d
 
+## Table of Contents
 
-## Features
+## Features 
 - **Task Management**: Organize tasks based on different difficulties, priority levels, and categories.
 - **Clean Interface**: Tailwind UI CSS favored a customization full of style features such as alerts, animations, transitions, giving visual feedback to users.
 - **Status Tracking**: Keep track of changes in task status over time for improved productivity and workflow management.
 - **Server Components and Actions**: Utilize NextJS React Framework to implement server components and actions for enhanced performance and functionality.
 - **API Simulation**: Employ json-server to simulate an API, enabling seamless communication between front-end and back-end components.
 
-## Technologies Used
+## Technologies Used 
 - **[Tailwind CSS](https://tailwindcss.com/)**: A utility-first CSS framework for rapid UI development.
 - **[NextJS React Framework](https://nextjs.org/)**: A React framework with server-side rendering capabilities for building fast and scalable web applications.
 - **[json-server](https://github.com/typicode/json-server)**: A full fake REST API that enables rapid development and prototyping by simulating a fully functional backend.
@@ -55,6 +55,23 @@ https://github.com/Shellyda/nextjs-todo-app/assets/69990297/eaa6db61-5da6-4f95-9
 - **Change Status**: Use the provided options to change the status of a todo (e.g., Pending, Completed, Archived).
 - **Delete Todo**: Click on the delete icon next to a task to remove it from the list.
 - **Alerts**: Notice the alerts that give feedback on changes in the status of your todo.
+
+## Gallery
+
+| App with closed form input | App with open form input |
+|-----------------------------|--------------------------|
+| ![Image 1](https://github.com/Shellyda/nextjs-todo-app/assets/69990297/61bc51bc-28a9-43f7-941d-6015be8b1a81) | ![Image 2](https://github.com/Shellyda/nextjs-todo-app/assets/69990297/8d83dc4a-145a-4e31-bab7-6241219bb914) |
+
+### Videos:
+
+#### 1. Add todo form animations: 
+https://github.com/Shellyda/nextjs-todo-app/assets/69990297/9dbfea8c-bde8-4ca8-b4c7-fbd3798c44fe
+
+#### 2. Cards hover effect:
+https://github.com/Shellyda/nextjs-todo-app/assets/69990297/6c1be6f5-2c3f-4f69-8624-aa23d24a8af0 
+
+#### 3. Alerts feedbacks:
+https://github.com/Shellyda/nextjs-todo-app/assets/69990297/d6fd53ac-6966-4d09-8d18-368f554f31b3
 
 ## Contributing
 Contributions are welcome! Feel free to submit bug reports, feature requests, or pull requests to help improve this project.
