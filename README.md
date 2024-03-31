@@ -10,9 +10,10 @@ This project is a Todo List Board Web App designed for managing tasks of varying
 - **API Simulation**: Employ json-server to simulate an API, enabling seamless communication between front-end and back-end components.
 
 ## Technologies Used
-- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
-- **NextJS React Framework**: A React framework with server-side rendering capabilities for building fast and scalable web applications.
-- **json-server**: A full fake REST API that enables rapid development and prototyping by simulating a fully functional backend.
+- **[Tailwind CSS](https://tailwindcss.com/)**: A utility-first CSS framework for rapid UI development.
+- **[NextJS React Framework](https://nextjs.org/)**: A React framework with server-side rendering capabilities for building fast and scalable web applications.
+- **[json-server](https://github.com/typicode/json-server)**: A full fake REST API that enables rapid development and prototyping by simulating a fully functional backend.
+- **[Jest](https://jestjs.io/)**: A JavaScript testing framework for unit testing. //TODO - ADD TESTS
 
 ## Getting Started
 1. **Clone the Repository**: 
@@ -46,10 +47,14 @@ Contributions are welcome! Feel free to submit bug reports, feature requests, or
 ## License
 This project is licensed under the [MIT License](LICENSE).
 
-## Acknowledgements
-- Tailwind CSS
+## Skills worked on
+- Tailwind CSS Styling
 - NextJS React Framework
-- json-server
+- Server components
+- Server Actions
+- Client components
+- Design UI
+- Testing 
 
 ## Contact
 For any inquiries or feedback, please contact [sfsb2@cin.ufpe.br](mailto:sfsb2@cin.ufpe.br).
