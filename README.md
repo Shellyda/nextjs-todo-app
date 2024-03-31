@@ -15,6 +15,15 @@ A Todo List Board Web App designed for managing tasks of varying difficulties, p
 - **[json-server](https://github.com/typicode/json-server)**: A full fake REST API that enables rapid development and prototyping by simulating a fully functional backend.
 - **[Jest](https://jestjs.io/)**: A JavaScript testing framework for unit testing. //TODO - ADD TESTS
 
+## Skills worked on
+- Tailwind CSS Styling
+- NextJS React Framework
+- Server components
+- Server Actions
+- Client components
+- Design UI
+- Testing 
+
 ## Getting Started
 1. **Clone the Repository**: 
    ```bash
@@ -48,15 +57,6 @@ Contributions are welcome! Feel free to submit bug reports, feature requests, or
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
-
-## Skills worked on
-- Tailwind CSS Styling
-- NextJS React Framework
-- Server components
-- Server Actions
-- Client components
-- Design UI
-- Testing 
 
 ## Contact
 For any inquiries or feedback, please contact [sfsb2@cin.ufpe.br](mailto:sfsb2@cin.ufpe.br).
