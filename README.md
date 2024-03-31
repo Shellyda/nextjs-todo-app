@@ -1,6 +1,6 @@
 
 <div align="center">
-<h1>Todo List Board with NextJS React Framework</h1>
+<h1>Todo List Board with NextJS</h1>
 
 A Todo List Board Web App designed for managing tasks of varying difficulties, priority levels, and categories. This project serves as a practical exploration of Tailwind UI CSS and NextJS React Framework, with a specific focus on understanding server components and actions. Additionally, it utilizes Jest lib for testing and json-server to simulate an API, enabling seamless interaction between the front-end and back-end components.
 <br></br>
