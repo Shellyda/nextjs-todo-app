@@ -8,11 +8,7 @@ const Home = () => {
       <AddTodo />
       <TodoList />
 
-      <Toast testID="toast-canceled" text="This todo was deleted!" />
-      <Toast
-        testID="toast-completed"
-        text="This todo was completed successfully!"
-      />
+      <Toast testID="toast-alert" />
     </main>
   );
 };

@@ -4,7 +4,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { IToast } from "./interfaces";
 
-export const Toast = ({ testID, text }: IToast) => {
+export const Toast = ({ testID }: IToast) => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
 
@@ -80,7 +80,11 @@ export const Toast = ({ testID, text }: IToast) => {
             </svg>
           )}
         </div>
-        <div className="text-sm font-normal">{text}</div>
+        <div className="text-sm font-normal">
+          {type === "completed"
+            ? "This todo was completed successfully!"
+            : "This todo was deleted!"}
+        </div>
         <Link id="close-toast" href={pathname}>
           <button
             ref={closeButtonRef}
