@@ -2,6 +2,10 @@
 
 A Todo List Board Web App designed for managing tasks of varying difficulties, priority levels, and categories. This project serves as a practical exploration of Tailwind UI CSS and NextJS React Framework, with a specific focus on understanding server components and actions. Additionally, it utilizes Jest lib for testing and json-server to simulate an API, enabling seamless interaction between the front-end and back-end components.
 
+
+https://github.com/Shellyda/nextjs-todo-app/assets/69990297/eaa6db61-5da6-4f95-99f8-e52e20c0a96d
+
+
 ## Features
 - **Task Management**: Organize tasks based on different difficulties, priority levels, and categories.
 - **Clean Interface**: Tailwind UI CSS favored a customization full of style features such as alerts, animations, transitions, giving visual feedback to users.
