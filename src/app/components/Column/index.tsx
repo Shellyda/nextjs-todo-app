@@ -19,7 +19,7 @@ export const Column = ({ title, children, tasksNumber, icon }: IColumn) => {
         </div>
       </div>
       <div
-        className="space-y-2 overflow-y-auto"
+        className={`space-y-2 ${tasksNumber > 4 ? "overflow-y-auto" : ""}`}
         style={{
           maxHeight: "34rem",
         }}

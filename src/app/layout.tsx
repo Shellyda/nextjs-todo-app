@@ -9,14 +9,16 @@ export const metadata: Metadata = {
   description: "Todo Management Web App",
 };
 
-export default function RootLayout({
+export const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
     </html>
   );
-}
+};
+
+export default RootLayout;
