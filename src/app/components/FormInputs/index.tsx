@@ -91,7 +91,7 @@ export const FormInputs = () => {
           id="todo-title"
           type="text"
           name="title"
-          maxLength={36}
+          maxLength={30}
           placeholder="Do you have a task in mind?"
           alt="Text input"
           value={value.title}
