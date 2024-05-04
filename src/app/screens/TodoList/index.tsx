@@ -48,12 +48,7 @@ export const TodoList = async () => {
   };
 
   return (
-    <div
-      className="container mx-auto absolute"
-      style={{
-        top: "0",
-      }}
-    >
+    <div className="container mx-auto absolute top-0">
       <main className="mt-10">
         <div className="flex">
           <ClipboardDocumentCheckIcon className="mr-2 h-6 w-6 cursor-pointer text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]" />

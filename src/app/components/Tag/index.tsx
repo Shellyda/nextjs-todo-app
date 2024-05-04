@@ -1,8 +1,9 @@
 "use client";
 import { ITag } from "./interfaces";
-export const Tag = ({ text, styles }: ITag) => {
+export const Tag = ({ id, text, styles }: ITag) => {
   return (
     <span
+      id={id}
       style={{
         ...styles,
       }}

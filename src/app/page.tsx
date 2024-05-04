@@ -1,6 +1,5 @@
 import { Suspense } from "react";
-import { AddTodo } from "./components";
-import { Toast } from "./components/Toast";
+import { AddTodo, Toast } from "./components";
 import { TodoList } from "./screens";
 
 const Home = () => {
